@@ -449,7 +449,7 @@ function Hero() {
           }}>
             A space to feel{" "}
             <span style={{ fontStyle: "italic", color: SAGE, fontWeight: 300 }}>lighter</span>
-            , clearer,{" "}
+            ,{" "}
             <span className="accent-underline" style={{ fontStyle: "italic", color: TERRA, fontWeight: 300 }}>&amp; more like yourself</span>
           </h1>
 
