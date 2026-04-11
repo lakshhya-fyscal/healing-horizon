@@ -448,8 +448,8 @@ function Hero() {
             marginBottom: 26,
           }}>
             A space to feel{" "}
-            <span style={{ fontStyle: "italic", color: SAGE, fontWeight: 300 }}>lighter</span>
-            ,{" "}
+            <span style={{ fontStyle: "italic", color: SAGE, fontWeight: 300 }}>lighter,</span>
+            <br />
             <span className="accent-underline" style={{ fontStyle: "italic", color: TERRA, fontWeight: 300 }}>&amp; more like yourself</span>
           </h1>
 
