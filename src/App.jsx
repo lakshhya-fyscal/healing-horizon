@@ -657,14 +657,14 @@ function About() {
 
               <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
                 {[
-                  { icon: "💪", text: "Empowerment — you lead the way" },
-                  { icon: "🌍", text: "Inclusivity — a space for everyone" },
-                  { icon: "🧘", text: "Mindfulness & present-moment awareness" },
-                  { icon: "🤝", text: "Trauma-informed, non-judgmental care" },
-                ].map((item, i) => (
+                  "Empowerment — you lead the way",
+                  "Inclusivity — a space for everyone",
+                  "Mindfulness & present-moment awareness",
+                  "Trauma-informed, non-judgmental care",
+                ].map((text, i) => (
                   <div key={i} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <span style={{ fontSize: 16 }}>{item.icon}</span>
-                    <span style={{ fontFamily: B, fontSize: 14, color: MUTED }}>{item.text}</span>
+                    <div style={{ width: 5, height: 5, borderRadius: "50%", background: TERRA, flexShrink: 0 }} />
+                    <span style={{ fontFamily: B, fontSize: 14, color: MUTED }}>{text}</span>
                   </div>
                 ))}
               </div>
@@ -686,29 +686,29 @@ function About() {
             <span className="section-label">About</span>
             <div className="rule" />
             <h2 style={{
-              fontFamily: D, fontSize: "clamp(30px, 3.5vw, 48px)",
+              fontFamily: D, fontSize: "clamp(26px, 3.5vw, 44px)",
               fontWeight: 400, color: FOREST, lineHeight: 1.15,
               marginBottom: 22, letterSpacing: "-0.5px",
             }}>
-              Compassionate support for your{" "}
-              <em style={{ fontStyle: "italic", color: SAGE }}>mental wellness</em>{" "}journey
+              Most people who find me have already{" "}
+              <em style={{ fontStyle: "italic", color: SAGE }}>tried to figure it out</em>{" "}on their own.
             </h2>
 
             <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 16, fontWeight: 300 }}>
-              I am <strong style={{ color: FOREST, fontWeight: 500 }}>Vrinda Goel</strong> — an EFT Practitioner and Clinical
-              Psychologist holding an <strong style={{ color: FOREST, fontWeight: 500 }}>M.Sc in Clinical Psychology from the
-              University of Southampton</strong> and a B.A. (Hons) in Applied Psychology from Amity University. I am also a
-              certified practitioner through the <strong style={{ color: FOREST, fontWeight: 500 }}>EFT & Matrix Reimprinting
-              Academy (EFTMRA)</strong>.
+              For a while, that works. You read the right things, you push through, you tell yourself it'll pass. But some things
+              don't pass just because you want them to. They need to actually be looked at.
             </p>
             <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 16, fontWeight: 300 }}>
-              My practice is guided by two core values: <strong style={{ color: FOREST, fontWeight: 500 }}>Empowerment</strong> and{" "}
-              <strong style={{ color: FOREST, fontWeight: 500 }}>Inclusivity</strong>. I believe every person deserves a space where
-              they feel seen, heard, and capable of change — regardless of background or identity.
+              I am <strong style={{ color: FOREST, fontWeight: 500 }}>Vrinda</strong>, a Psychologist and an EFT Practitioner.
+              I work with people navigating anxiety, emotional overwhelm, self-doubt, and the kind of stress that's become so
+              familiar it almost feels normal.
+            </p>
+            <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 16, fontWeight: 300 }}>
+              My sessions draw on EFT, CBT, mindfulness, and a trauma-informed approach, but what that really means in practice
+              is that I follow what you need, not a fixed script.
             </p>
             <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 36, fontWeight: 300 }}>
-              Drawing on <strong style={{ color: FOREST, fontWeight: 500 }}>EFT, Mindfulness, CBT, and a trauma-informed
-              approach</strong>, I tailor every session to your unique needs — because no two journeys are the same.
+              I understand what it means to carry things quietly, and what it feels like when you finally don't have to.
             </p>
             <a href="#contact" className="btn-primary">Work with Me</a>
           </div>
@@ -813,7 +813,7 @@ function WhatIsEFT() {
             </p>
           </div>
           <div style={{ display: "flex", flexWrap: "wrap", gap: 9, flex: 1, minWidth: 280 }}>
-            {["Anxiety & Stress", "Trauma & PTSD", "Phobias", "Depression", "Grief & Loss", "Self-Esteem", "Relationship Issues", "Performance Blocks", "Chronic Pain"].map((tag, i) => (
+            {["Anxiety & Stress", "Trauma & PTSD", "Depression", "Self-Esteem", "Performance Blocks", "Chronic Pain"].map((tag, i) => (
               <span key={i} style={{
                 background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.82)",
                 fontFamily: B, fontSize: 13, fontWeight: 400,
