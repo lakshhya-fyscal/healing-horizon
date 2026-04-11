@@ -447,10 +447,10 @@ function Hero() {
             color: FOREST, letterSpacing: "-1.5px",
             marginBottom: 26,
           }}>
-            A space to{" "}
-            <span style={{ fontStyle: "italic", color: SAGE, fontWeight: 300 }}>reflect</span>
-            ,<br/>heal &{" "}
-            <span className="accent-underline" style={{ fontStyle: "italic", color: TERRA, fontWeight: 300 }}>grow</span>
+            A space to feel{" "}
+            <span style={{ fontStyle: "italic", color: SAGE, fontWeight: 300 }}>lighter</span>
+            , clearer,{" "}
+            <span className="accent-underline" style={{ fontStyle: "italic", color: TERRA, fontWeight: 300 }}>&amp; more like yourself</span>
           </h1>
 
           <p className="fade-up" style={{
@@ -458,7 +458,9 @@ function Hero() {
             maxWidth: 460, marginBottom: 38, animationDelay: "0.12s",
             fontWeight: 300,
           }}>
-            I am Vrinda — EFT Practitioner & Counselling Psychologist. If you've been carrying something heavy for a while, wondering if it'll ever actually shift, I want you to know: it can. I help people untangle what's keeping them stuck.
+            I am Vrinda — EFT Practitioner & Counselling Psychologist. If you've been carrying something heavy for a while, wondering if it'll ever actually shift,{" "}
+            <strong style={{ color: FOREST, fontWeight: 500 }}>I want you to know: it can.</strong>{" "}
+            I help people untangle what's keeping them stuck.
           </p>
 
           <div className="fade-up" style={{ display: "flex", gap: 12, flexWrap: "wrap", animationDelay: "0.22s" }}>
