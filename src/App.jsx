@@ -422,9 +422,7 @@ function Hero() {
             maxWidth: 460, marginBottom: 38, animationDelay: "0.12s",
             fontWeight: 300,
           }}>
-            I'm <strong style={{ color: FOREST, fontWeight: 500 }}>Vrinda Goel</strong> — EFT Practitioner &
-            Counselling Psychologist. I offer a compassionate space for reflection and meaningful
-            action toward better mental health.
+            I am Vrinda — EFT Practitioner & Counselling Psychologist. If you've been carrying something heavy for a while, wondering if it'll ever actually shift, I want you to know: it can. I help people untangle what's keeping them stuck.
           </p>
 
           <div className="fade-up" style={{ display: "flex", gap: 12, flexWrap: "wrap", animationDelay: "0.22s" }}>
@@ -618,7 +616,7 @@ function About() {
                 borderLeft: `3px solid ${TERRA}`,
                 paddingLeft: 22, marginBottom: 32,
               }}>
-                Healing is not about fixing what is broken — it is about rediscovering what was always whole.
+                The shift I see most often isn't dramatic. It's the session where someone says — 'I actually feel okay today.'
               </blockquote>
 
               <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
@@ -661,7 +659,7 @@ function About() {
             </h2>
 
             <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 16, fontWeight: 300 }}>
-              I'm <strong style={{ color: FOREST, fontWeight: 500 }}>Vrinda Goel</strong> — an EFT Practitioner and Clinical
+              I am <strong style={{ color: FOREST, fontWeight: 500 }}>Vrinda Goel</strong> — an EFT Practitioner and Clinical
               Psychologist holding an <strong style={{ color: FOREST, fontWeight: 500 }}>M.Sc in Clinical Psychology from the
               University of Southampton</strong> and a B.A. (Hons) in Applied Psychology from Amity University. I am also a
               certified practitioner through the <strong style={{ color: FOREST, fontWeight: 500 }}>EFT & Matrix Reimprinting
@@ -806,7 +804,7 @@ const SERVICES = [
     desc: "One-on-one sessions using Emotional Freedom Techniques to process and release emotional blocks, fears, trauma, and limiting beliefs.",
     tags: ["Anxiety", "Trauma", "Stress", "Phobias"],
     duration: "60 min",
-    format: "Online · In-person",
+    format: "Online",
     color: SAGE_LT,
     accent: SAGE,
   },
@@ -815,8 +813,8 @@ const SERVICES = [
     title: "Counselling & Psychotherapy",
     desc: "Integrative talk therapy drawing on person-centred approaches to explore patterns, build resilience, and find direction.",
     tags: ["Depression", "Relationships", "Grief", "Life Transitions"],
-    duration: "50 min",
-    format: "Online · In-person",
+    duration: "60 min",
+    format: "Online",
     color: CREAM2,
     accent: GOLD,
   },
@@ -826,17 +824,17 @@ const SERVICES = [
     desc: "A bespoke blend of EFT and counselling tailored to your specific needs — combining both modalities for deeper transformation.",
     tags: ["Complex Needs", "Long-term Support"],
     duration: "60 min",
-    format: "Online · In-person",
+    format: "Online",
     color: CREAM2,
     accent: FOREST,
   },
   {
     icon: "🌿",
     title: "Free Discovery Call",
-    desc: "A no-obligation 20-minute conversation to explore whether we're a good fit and answer any questions you might have.",
+    desc: "Not sure if therapy is for you, or if I am the right person? That's exactly what this call is for. No pressure — just a real conversation to understand the process.",
     tags: ["First Step", "No Commitment"],
     duration: "20 min",
-    format: "Video Call",
+    format: "Online",
     color: TERRA_LT,
     accent: TERRA,
     featured: true,
@@ -1065,7 +1063,7 @@ function Pricing() {
     },
     {
       name: "Free Discovery Call",
-      desc: "Not sure yet? Let's have a 20-minute no-obligation chat to see if we're a good fit.",
+      desc: "Not sure if therapy is for you, or if I am the right person? That's exactly what this call is for. No pressure — just a real conversation to understand the process.",
       prices: { INR: "Free", USD: "Free", GBP: "Free" },
       includes: ["20-minute video call", "Q&A with Vrinda", "No commitment required"],
       cta: "Book Free Call",
@@ -1432,7 +1430,7 @@ function Contact() {
                 { icon: "📧", label: "Email", value: "vrinda@healinghorizon.com" },
                 { icon: "📱", label: "Phone / WhatsApp", value: "+91 00000 00000" },
                 { icon: "🕐", label: "Response Time", value: "Within 24 hours" },
-                { icon: "🌐", label: "Sessions", value: "Online & In-person" },
+                { icon: "🌐", label: "Sessions", value: "Online" },
               ].map((c, i) => (
                 <div key={i} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
                   <div style={{
