@@ -231,10 +231,46 @@ const GlobalStyle = () => (
     /* Mobile */
     @media (max-width: 768px) {
       .hide-mobile { display: none !important; }
+      .show-mobile { display: block !important; }
       .mobile-col { flex-direction: column !important; }
       .mobile-full { width: 100% !important; }
       .mobile-center { text-align: center !important; }
       .mobile-grid-1 { grid-template-columns: 1fr !important; }
+
+      /* Section padding */
+      .section-pad { padding: 72px 20px !important; }
+      .section-pad-b0 { padding: 72px 20px 0 !important; }
+
+      /* Hero */
+      .hero-inner {
+        grid-template-columns: 1fr !important;
+        padding: 40px 20px 60px !important;
+        gap: 0 !important;
+      }
+
+      /* EFT steps */
+      .eft-step-row { grid-template-columns: 1fr !important; }
+      .eft-step-row > div { order: 0 !important; }
+      .eft-step-num { min-height: 80px !important; padding: 20px !important; }
+      .eft-step-text { padding: 28px 24px !important; }
+      .eft-benefits {
+        padding: 36px 24px !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        gap: 24px !important;
+      }
+
+      /* Testimonials */
+      .testi-card { padding: 28px 20px 24px !important; }
+
+      /* FAQ */
+      .faq-answer { padding: 0 20px 20px 20px !important; }
+
+      /* Footer */
+      .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+
+      /* Contact form */
+      .form-row { grid-template-columns: 1fr !important; }
     }
 
     /* Accordion */
@@ -331,7 +367,7 @@ function Navbar() {
           Book a Session
         </a>
 
-        <button onClick={() => setMenuOpen(v => !v)} style={{
+        <button onClick={() => setMenuOpen(v => !v)} className="show-mobile" style={{
           background: "none", border: "none", padding: 4, cursor: "pointer",
           display: "none",
         }}>
@@ -390,7 +426,7 @@ function Hero() {
         zIndex: 0,
       }}>Heal</div>
 
-      <div style={{
+      <div className="hero-inner" style={{
         maxWidth: 1200, margin: "0 auto", width: "100%", position: "relative", zIndex: 1,
         padding: "60px 28px 80px",
         display: "grid", gridTemplateColumns: "1.1fr 0.9fr",
@@ -580,7 +616,7 @@ function MarqueeStrip() {
 ───────────────────────────────────────────────────────────────────────────── */
 function About() {
   return (
-    <section id="about" style={{ padding: "110px 28px", background: WHITE, position: "relative", overflow: "hidden" }}>
+    <section id="about" className="section-pad" style={{ padding: "110px 28px", background: WHITE, position: "relative", overflow: "hidden" }}>
       {/* Background text watermark */}
       <div style={{
         position: "absolute", top: "50%", right: -40, transform: "translateY(-50%)",
@@ -694,7 +730,7 @@ const EFT_STEPS = [
 
 function WhatIsEFT() {
   return (
-    <section id="approach" style={{ padding: "110px 28px 0", background: CREAM, position: "relative", overflow: "hidden" }}>
+    <section id="approach" className="section-pad-b0" style={{ padding: "110px 28px 0", background: CREAM, position: "relative", overflow: "hidden" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 72 }}>
           <span className="section-label reveal">The Method</span>
@@ -718,7 +754,7 @@ function WhatIsEFT() {
         {/* Steps — stacked with giant number backgrounds */}
         <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
           {EFT_STEPS.map((s, i) => (
-            <div key={i} className={i % 2 === 0 ? "reveal-left" : "reveal-right"} style={{
+            <div key={i} className={`eft-step-row ${i % 2 === 0 ? "reveal-left" : "reveal-right"}`} style={{
               display: "grid", gridTemplateColumns: i % 2 === 0 ? "1fr 1fr" : "1fr 1fr",
               gap: 0,
               background: i % 2 === 0 ? WHITE : CREAM2,
@@ -726,7 +762,7 @@ function WhatIsEFT() {
               overflow: "hidden",
             }}>
               {/* Number side */}
-              <div style={{
+              <div className="eft-step-num" style={{
                 order: i % 2 === 0 ? 0 : 1,
                 background: i % 2 === 0 ? SAGE_LT : CREAM3,
                 display: "flex", alignItems: "center", justifyContent: "center",
@@ -746,7 +782,7 @@ function WhatIsEFT() {
                 }}>{s.n}</div>
               </div>
               {/* Text side */}
-              <div style={{
+              <div className="eft-step-text" style={{
                 order: i % 2 === 0 ? 1 : 0,
                 padding: "56px 48px",
                 display: "flex", flexDirection: "column", justifyContent: "center",
@@ -762,7 +798,7 @@ function WhatIsEFT() {
         </div>
 
         {/* EFT benefits */}
-        <div className="reveal" style={{
+        <div className="reveal eft-benefits" style={{
           background: FOREST, borderRadius: "0 0 24px 24px",
           padding: "56px 48px",
           display: "flex", flexWrap: "wrap", gap: 40,
@@ -843,7 +879,7 @@ const SERVICES = [
 
 function Services() {
   return (
-    <section id="services" style={{ padding: "110px 28px", background: WHITE }}>
+    <section id="services" className="section-pad" style={{ padding: "110px 28px", background: WHITE }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ maxWidth: 560, marginBottom: 64 }}>
           <span className="section-label reveal">Services</span>
@@ -994,7 +1030,7 @@ const APPROACHES = [
 
 function Approaches() {
   return (
-    <section style={{ padding: "110px 28px", background: CREAM2, position: "relative", overflow: "hidden" }}>
+    <section className="section-pad" style={{ padding: "110px 28px", background: CREAM2, position: "relative", overflow: "hidden" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 64 }}>
           <span className="section-label reveal">How I Work</span>
@@ -1078,7 +1114,7 @@ function Pricing() {
   ];
 
   return (
-    <section id="pricing" style={{ padding: "110px 28px", background: WHITE, position: "relative", overflow: "hidden" }}>
+    <section id="pricing" className="section-pad" style={{ padding: "110px 28px", background: WHITE, position: "relative", overflow: "hidden" }}>
       {/* BG watermark */}
       <div style={{
         position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)",
@@ -1230,7 +1266,7 @@ function Testimonials() {
   const [active, setActive] = useState(0);
 
   return (
-    <section style={{
+    <section className="section-pad" style={{
       padding: "110px 28px",
       background: FOREST, position: "relative", overflow: "hidden",
     }}>
@@ -1257,7 +1293,7 @@ function Testimonials() {
           </h2>
         </div>
 
-        <div style={{
+        <div className="testi-card" style={{
           background: "rgba(255,255,255,0.05)", borderRadius: 28,
           padding: "52px 52px 44px", border: "1px solid rgba(255,255,255,0.08)",
           backdropFilter: "blur(20px)",
@@ -1325,7 +1361,7 @@ function FAQ() {
   const [open, setOpen] = useState(null);
 
   return (
-    <section id="faq" style={{ padding: "110px 28px", background: CREAM2 }}>
+    <section id="faq" className="section-pad" style={{ padding: "110px 28px", background: CREAM2 }}>
       <div style={{ maxWidth: 760, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 60 }}>
           <span className="section-label reveal">FAQ</span>
@@ -1369,7 +1405,7 @@ function FAQ() {
                 </span>
               </button>
               {open === i && (
-                <div style={{ padding: "0 28px 24px 68px", animation: "fadeIn 0.2s ease" }}>
+                <div className="faq-answer" style={{ padding: "0 28px 24px 68px", animation: "fadeIn 0.2s ease" }}>
                   <p style={{ fontFamily: B, fontSize: 14, color: MUTED, lineHeight: 1.78, fontWeight: 300 }}>{f.a}</p>
                 </div>
               )}
@@ -1397,7 +1433,7 @@ function Contact() {
   };
 
   return (
-    <section id="contact" style={{ padding: "110px 28px", background: WHITE, position: "relative", overflow: "hidden" }}>
+    <section id="contact" className="section-pad" style={{ padding: "110px 28px", background: WHITE, position: "relative", overflow: "hidden" }}>
       {/* BG decoration */}
       <div style={{
         position: "absolute", top: 0, right: 0, width: 400, height: 400,
@@ -1495,7 +1531,7 @@ function Contact() {
                   Book a Session
                 </h3>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
+                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
                   {[
                     { name: "name", label: "Full Name", placeholder: "Your name", type: "text" },
                     { name: "email", label: "Email", placeholder: "your@email.com", type: "email" },
@@ -1564,7 +1600,7 @@ function Footer() {
   return (
     <footer style={{ background: FOREST, color: WHITE, padding: "68px 28px 36px" }}>
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 48, marginBottom: 52 }}>
+        <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: 48, marginBottom: 52 }}>
           {/* Brand */}
           <div>
             <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 18 }}>
