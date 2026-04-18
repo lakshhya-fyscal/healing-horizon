@@ -442,14 +442,14 @@ function Hero() {
           </div>
 
           <h1 className="fade-up" style={{
-            fontFamily: D, fontWeight: 400, lineHeight: 1.08,
-            fontSize: "clamp(46px, 5.8vw, 76px)",
-            color: FOREST, letterSpacing: "-1.5px",
+            fontFamily: D, fontWeight: 400, lineHeight: 1.0,
+            fontSize: "clamp(32px, 4vw, 48px)",
+            color: FOREST, letterSpacing: "-1px",
             marginBottom: 26,
           }}>
-            A space to feel
+            A space to feel{" "}
+            <span style={{ fontStyle: "italic", color: SAGE, fontWeight: 300 }}>lighter,</span>
             <br />
-            <span style={{ fontStyle: "italic", color: SAGE, fontWeight: 300 }}>lighter,</span>{" "}
             <span className="accent-underline" style={{ fontStyle: "italic", color: TERRA, fontWeight: 300 }}>&amp; more like yourself</span>
           </h1>
 
@@ -458,7 +458,7 @@ function Hero() {
             maxWidth: 460, marginBottom: 38, animationDelay: "0.12s",
             fontWeight: 300,
           }}>
-            I am Vrinda — EFT Practitioner & Counselling Psychologist. If you've been carrying something heavy for a while, wondering if it'll ever actually shift,{" "}
+            I am Vrinda, an EFT Practitioner & a Counselling Psychologist. If you've been carrying something heavy for a while, wondering if it'll ever actually shift,{" "}
             <strong style={{ color: FOREST, fontWeight: 500 }}>I want you to know: it can.</strong>{" "}
             I help people untangle what's keeping them stuck.
           </p>
@@ -697,22 +697,21 @@ function About() {
             </h2>
 
             <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 16, fontWeight: 300 }}>
-              For a while, that works. You read the right things, you push through, you tell yourself it'll pass. But some things
-              don't pass just because you want them to. They need to actually be looked at.
+              For a while, pushing through works. You read the right things, stay busy, tell yourself it'll pass.
+              But some things don't pass on their own; they wait. And the longer they wait, the more ordinary they start to feel.
             </p>
             <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 16, fontWeight: 300 }}>
-              I am <strong style={{ color: FOREST, fontWeight: 500 }}>Vrinda</strong>, a Psychologist and an EFT Practitioner.
-              I work with people navigating anxiety, emotional overwhelm, self-doubt, and the kind of stress that's become so
-              familiar it almost feels normal.
+              That's where I come in.
             </p>
             <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 16, fontWeight: 300 }}>
-              My sessions draw on EFT, CBT, mindfulness, and a trauma-informed approach, but what that really means in practice
-              is that I follow what you need, not a fixed script.
+              I work with people carrying anxiety, emotional overwhelm, self-doubt, and a kind of exhaustion that's hard to name.
+              My sessions draw on EFT, CBT, mindfulness, and a trauma-informed approach, but what that means in practice is simple:
+              I follow what you need, not a formula.
             </p>
             <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 36, fontWeight: 300 }}>
-              I understand what it means to carry things quietly, and what it feels like when you finally don't have to.
+              I know what it means to hold things quietly for a long time. And I know what it feels like when you finally don't have to.
             </p>
-            <a href="#contact" className="btn-primary">Work with Me</a>
+            <a href="#contact" className="btn-primary">Work With Me</a>
           </div>
         </div>
       </div>
@@ -721,113 +720,76 @@ function About() {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   WHAT IS EFT
+   WORK WITH ME — IMAGINE FEELING
 ───────────────────────────────────────────────────────────────────────────── */
-const EFT_STEPS = [
-  { n: "01", title: "Identify the Issue", desc: "We begin by naming what you're experiencing — a feeling, a memory, a belief. There's no rush; this is your space." },
-  { n: "02", title: "Acknowledge & Accept", desc: "EFT begins with a setup phrase that acknowledges the problem while affirming deep self-acceptance — a powerful foundation." },
-  { n: "03", title: "Tap the Meridian Points", desc: "Gently tapping on specific acupressure points while focusing on the issue calms the nervous system and shifts emotional charge." },
-  { n: "04", title: "Release & Integrate", desc: "As emotional intensity decreases, you gain clarity, calm, and new perspectives — creating lasting, embodied change." },
+const IMAGINE_ITEMS = [
+  { text: "Learn to manage negative thought cycles", accent: SAGE },
+  { text: "Feel your emotions without being ruled by them", accent: GOLD },
+  { text: "Feel confident in your boundaries", accent: TERRA },
+  { text: "Feel in control, even on hard days", accent: SAGE },
+  { text: "Express what you need and how you feel", accent: GOLD },
+  { text: "Navigate change with resilience", accent: TERRA },
 ];
 
 function WhatIsEFT() {
   return (
-    <section id="approach" className="section-pad-b0" style={{ padding: "110px 28px 0", background: CREAM, position: "relative", overflow: "hidden" }}>
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 72 }}>
-          <span className="section-label reveal">The Method</span>
-          <div className="rule rule-center reveal" />
-          <h2 className="reveal" style={{
-            fontFamily: D, fontSize: "clamp(32px, 4.5vw, 58px)",
-            fontWeight: 400, color: FOREST, lineHeight: 1.1,
-            letterSpacing: "-1px", marginBottom: 18,
-          }}>
-            What is <em style={{ fontStyle: "italic", color: SAGE }}>EFT Tapping</em>?
-          </h2>
-          <p className="reveal" style={{
-            fontFamily: B, fontSize: 17, color: MUTED, lineHeight: 1.8,
-            maxWidth: 580, margin: "0 auto", fontWeight: 300,
-          }}>
-            Emotional Freedom Techniques — a research-backed, mind-body healing tool that combines
-            cognitive therapy with acupressure to resolve emotional and psychological challenges.
-          </p>
-        </div>
+    <section id="approach" className="section-pad" style={{ padding: "110px 28px", background: CREAM, position: "relative", overflow: "hidden" }}>
+      {/* Background watermark */}
+      <div style={{
+        position: "absolute", top: "50%", left: "50%",
+        transform: "translate(-50%, -50%)",
+        fontFamily: D, fontSize: "clamp(120px, 18vw, 220px)",
+        fontWeight: 300, color: "rgba(79,115,88,0.04)",
+        letterSpacing: "-6px", lineHeight: 1,
+        pointerEvents: "none", userSelect: "none", whiteSpace: "nowrap",
+        zIndex: 0,
+      }}>Feel</div>
 
-        {/* Steps — stacked with giant number backgrounds */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
-          {EFT_STEPS.map((s, i) => (
-            <div key={i} className={`eft-step-row ${i % 2 === 0 ? "reveal-left" : "reveal-right"}`} style={{
-              display: "grid", gridTemplateColumns: i % 2 === 0 ? "1fr 1fr" : "1fr 1fr",
-              gap: 0,
-              background: i % 2 === 0 ? WHITE : CREAM2,
-              borderRadius: i === 0 ? "20px 20px 0 0" : i === 3 ? "0 0 0 0" : "0",
-              overflow: "hidden",
+      <div style={{ maxWidth: 1200, margin: "0 auto", position: "relative", zIndex: 1 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="mobile-grid-1">
+
+          {/* LEFT: Heading + intro */}
+          <div className="reveal-left">
+            <span className="section-label">Work With Me</span>
+            <div className="rule" />
+            <h2 style={{
+              fontFamily: D, fontSize: "clamp(32px, 4.5vw, 58px)",
+              fontWeight: 400, color: FOREST, lineHeight: 1.1,
+              letterSpacing: "-1px", marginBottom: 22,
             }}>
-              {/* Number side */}
-              <div className="eft-step-num" style={{
-                order: i % 2 === 0 ? 0 : 1,
-                background: i % 2 === 0 ? SAGE_LT : CREAM3,
-                display: "flex", alignItems: "center", justifyContent: "center",
-                padding: "60px 40px", position: "relative", overflow: "hidden",
-                minHeight: 200,
-              }}>
-                <div style={{
-                  fontFamily: D, fontSize: 160, fontWeight: 600,
-                  color: i % 2 === 0 ? "rgba(79,115,88,0.12)" : "rgba(196,148,90,0.1)",
-                  lineHeight: 1, userSelect: "none", position: "absolute",
-                  right: i % 2 === 0 ? -10 : "auto", left: i % 2 === 0 ? "auto" : -10,
-                }}>{s.n}</div>
-                <div style={{
-                  fontFamily: D, fontSize: 72, fontWeight: 500,
-                  color: i % 2 === 0 ? SAGE : GOLD,
-                  opacity: 0.6, position: "relative", zIndex: 1,
-                }}>{s.n}</div>
-              </div>
-              {/* Text side */}
-              <div className="eft-step-text" style={{
-                order: i % 2 === 0 ? 1 : 0,
-                padding: "56px 48px",
-                display: "flex", flexDirection: "column", justifyContent: "center",
-              }}>
-                <h3 style={{
-                  fontFamily: D, fontSize: "clamp(22px, 2.2vw, 30px)",
-                  fontWeight: 500, color: FOREST, marginBottom: 14, letterSpacing: "-0.3px",
-                }}>{s.title}</h3>
-                <p style={{ fontFamily: B, fontSize: 15, color: MUTED, lineHeight: 1.78, fontWeight: 300 }}>{s.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* EFT benefits */}
-        <div className="reveal eft-benefits" style={{
-          background: FOREST, borderRadius: "0 0 24px 24px",
-          padding: "56px 48px",
-          display: "flex", flexWrap: "wrap", gap: 40,
-          alignItems: "center", justifyContent: "space-between",
-        }}>
-          <div style={{ maxWidth: 360 }}>
-            <h3 style={{ fontFamily: D, fontSize: "clamp(24px, 2.5vw, 34px)", fontWeight: 400, color: WHITE, marginBottom: 10, fontStyle: "italic" }}>
-              EFT can help with
-            </h3>
-            <p style={{ fontFamily: B, fontSize: 14, color: "rgba(255,255,255,0.6)", lineHeight: 1.75, fontWeight: 300 }}>
-              Research shows EFT is effective across a wide range of challenges — often faster than traditional therapy alone.
+              Imagine{" "}
+              <em style={{ fontStyle: "italic", color: SAGE }}>feeling:</em>
+            </h2>
+            <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, fontWeight: 300, marginBottom: 36 }}>
+              If any of this feels out of reach right now, that's exactly where we start. Here's what becomes possible when we work together.
             </p>
+            <a href="#contact" className="btn-primary">Start the Conversation</a>
           </div>
-          <div style={{ display: "flex", flexWrap: "wrap", gap: 9, flex: 1, minWidth: 280 }}>
-            {["Anxiety & Stress", "Trauma & PTSD", "Depression", "Self-Esteem", "Performance Blocks", "Chronic Pain"].map((tag, i) => (
-              <span key={i} style={{
-                background: "rgba(255,255,255,0.08)", color: "rgba(255,255,255,0.82)",
-                fontFamily: B, fontSize: 13, fontWeight: 400,
-                padding: "7px 16px", borderRadius: 100,
-                border: "1px solid rgba(255,255,255,0.12)",
-              }}>{tag}</span>
+
+          {/* RIGHT: Items list */}
+          <div className="reveal-right" style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {IMAGINE_ITEMS.map((item, i) => (
+              <div key={i} style={{
+                background: WHITE,
+                borderRadius: 16,
+                padding: "20px 24px",
+                border: `1px solid ${BORDER}`,
+                display: "flex", alignItems: "center", gap: 16,
+                transition: "transform 0.25s, box-shadow 0.25s",
+              }}
+                onMouseEnter={e => { e.currentTarget.style.transform = "translateX(6px)"; e.currentTarget.style.boxShadow = "0 8px 32px rgba(24,38,28,0.08)"; }}
+                onMouseLeave={e => { e.currentTarget.style.transform = "translateX(0)"; e.currentTarget.style.boxShadow = "none"; }}
+              >
+                <div style={{
+                  width: 8, height: 8, borderRadius: "50%",
+                  background: item.accent, flexShrink: 0,
+                }} />
+                <span style={{ fontFamily: B, fontSize: 15, color: FOREST, fontWeight: 400, lineHeight: 1.5 }}>{item.text}</span>
+              </div>
             ))}
           </div>
         </div>
       </div>
-
-      <WaveDivider flip={false} fill={WHITE} />
     </section>
   );
 }
@@ -848,23 +810,13 @@ const SERVICES = [
   },
   {
     icon: "🧠",
-    title: "Counselling & Psychotherapy",
-    desc: "Integrative talk therapy drawing on person-centred approaches to explore patterns, build resilience, and find direction.",
-    tags: ["Depression", "Relationships", "Grief", "Life Transitions"],
+    title: "Counselling",
+    desc: "Talk therapy to make sense of what's happening and find your way through it. We talk, we explore, we look at the patterns.",
+    tags: ["Depression", "Relationships", "Life Transitions"],
     duration: "60 min",
     format: "Online",
     color: CREAM2,
     accent: GOLD,
-  },
-  {
-    icon: "✨",
-    title: "Integrative Therapy",
-    desc: "A bespoke blend of EFT and counselling tailored to your specific needs — combining both modalities for deeper transformation.",
-    tags: ["Complex Needs", "Long-term Support"],
-    duration: "60 min",
-    format: "Online",
-    color: CREAM2,
-    accent: FOREST,
   },
   {
     icon: "🌿",
@@ -889,13 +841,10 @@ function Services() {
           <h2 className="reveal" style={{
             fontFamily: D, fontSize: "clamp(30px, 4vw, 52px)",
             fontWeight: 400, color: FOREST, lineHeight: 1.12,
-            letterSpacing: "-0.8px", marginBottom: 16,
+            letterSpacing: "-0.8px", marginBottom: 0,
           }}>
-            How I can <em style={{ fontStyle: "italic", color: SAGE }}>support you</em>
+            Where would you like to <em style={{ fontStyle: "italic", color: SAGE }}>start?</em>
           </h2>
-          <p className="reveal" style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.8, fontWeight: 300 }}>
-            Every offering is crafted to meet you where you are, with care, expertise, and full presence.
-          </p>
         </div>
 
         <div style={{
@@ -1003,14 +952,14 @@ const APPROACHES = [
   {
     icon: "🧘",
     title: "Mindfulness",
-    desc: "Cultivating present-moment awareness to observe thoughts and feelings without judgement — reducing anxiety and building emotional resilience.",
+    desc: "Cultivating present-moment awareness to observe thoughts and feelings without judgment.",
     color: SAGE_LT,
     accent: SAGE,
   },
   {
     icon: "🫀",
     title: "EFT (Tapping)",
-    desc: "Combining acupressure with cognitive techniques to release emotional blocks at their root — often providing rapid, lasting relief.",
+    desc: "EFT works with the body to release what talking alone doesn't always reach. Most people feel a shift within the first session.",
     color: CREAM2,
     accent: GOLD,
   },
@@ -1024,7 +973,7 @@ const APPROACHES = [
   {
     icon: "🛡️",
     title: "Trauma-Informed",
-    desc: "Every session centres safety, trust, and your autonomy. I work with an understanding of how trauma shapes the mind and body.",
+    desc: "Everything we do is at your pace. I work with an awareness of how past experiences live in the body.",
     color: TERRA_LT,
     accent: TERRA,
   },
@@ -1042,10 +991,10 @@ function Approaches() {
             fontWeight: 400, color: FOREST, letterSpacing: "-0.8px", lineHeight: 1.12,
             marginBottom: 16,
           }}>
-            My therapeutic <em style={{ fontStyle: "italic", color: SAGE }}>approaches</em>
+            Tools that go <em style={{ fontStyle: "italic", color: SAGE }}>deeper</em> than just talking about it
           </h2>
           <p className="reveal" style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.8, maxWidth: 520, margin: "0 auto", fontWeight: 300 }}>
-            I draw on multiple evidence-based modalities, weaving them together into a personalised approach that serves <em>you</em>.
+            I draw on multiple evidence-based modalities, weaving them together into a personalised approach.
           </p>
         </div>
 
@@ -1079,25 +1028,25 @@ function Approaches() {
    PRICING
 ───────────────────────────────────────────────────────────────────────────── */
 function Pricing() {
-  const [currency, setCurrency] = useState("INR");
+  const currency = "INR";
 
   const plans = [
     {
       name: "Individual Session",
-      desc: "A single 50-minute session — ideal to get started or to continue at your own pace.",
-      prices: { INR: "₹5,000", USD: "$60", GBP: "£50" },
-      includes: ["50-minute session", "EFT, CBT or Counselling", "Online or in-person", "Follow-up resources"],
+      desc: "Perfect for getting started or continuing at your own pace.",
+      prices: { INR: "₹4,000", USD: "₹4,000", GBP: "₹4,000" },
+      includes: ["60-minute session", "EFT, CBT or Counselling", "Follow-up resources"],
       cta: "Book a Session",
       featured: false,
     },
     {
       name: "Bundle of 5",
-      desc: "Commit to your journey with five sessions — the most effective way to create lasting change.",
-      prices: { INR: "₹20,000", USD: "$211", GBP: "£200" },
-      includes: ["5 × 50-minute sessions", "Full therapeutic flexibility", "Priority scheduling", "Save vs. individual rate", "Ongoing session notes"],
+      desc: "Most clients see meaningful progress within 4–6 sessions.",
+      prices: { INR: "₹18,000", USD: "₹18,000", GBP: "₹18,000" },
+      includes: ["5 × 60-minute sessions", "Priority scheduling", "EFT, CBT or Counselling", "Follow-up resources"],
       cta: "Get the Bundle",
       featured: true,
-      saving: { INR: "Save ₹5,000", USD: "Save $89", GBP: "Save £50" },
+      saving: { INR: "Save 10%", USD: "Save 10%", GBP: "Save 10%" },
     },
     {
       name: "Free Discovery Call",
@@ -1107,12 +1056,6 @@ function Pricing() {
       cta: "Book Free Call",
       featured: false,
     },
-  ];
-
-  const currencies = [
-    { code: "INR", label: "₹ INR" },
-    { code: "USD", label: "$ USD" },
-    { code: "GBP", label: "£ GBP" },
   ];
 
   return (
@@ -1139,21 +1082,6 @@ function Pricing() {
             Investing in your mental health is one of the most meaningful things you can do for yourself.
           </p>
 
-          {/* Currency toggle */}
-          <div className="reveal" style={{
-            display: "inline-flex", background: CREAM2, borderRadius: 100,
-            padding: 4, border: `1px solid ${BORDER}`,
-          }}>
-            {currencies.map(c => (
-              <button key={c.code} onClick={() => setCurrency(c.code)} style={{
-                padding: "8px 22px", borderRadius: 100, border: "none", cursor: "pointer",
-                fontFamily: B, fontSize: 13, fontWeight: 500,
-                background: currency === c.code ? FOREST : "transparent",
-                color: currency === c.code ? WHITE : MUTED,
-                transition: "all 0.22s",
-              }}>{c.label}</button>
-            ))}
-          </div>
         </div>
 
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
@@ -1254,7 +1182,7 @@ function Pricing() {
         </div>
 
         <p className="reveal" style={{ fontFamily: B, fontSize: 13, color: MUTED, textAlign: "center", marginTop: 28, fontWeight: 300 }}>
-          All prices include VAT where applicable. Bundle sessions are valid for 3 months from purchase.
+          Bundle sessions are valid for 2 months from purchase.
         </p>
       </div>
     </section>
@@ -1351,12 +1279,12 @@ function Testimonials() {
    FAQ
 ───────────────────────────────────────────────────────────────────────────── */
 const FAQS = [
-  { q: "What can I expect from my first session?", a: "Your first session is a safe space to share what's brought you here. We'll discuss your goals, explore your history at whatever pace feels comfortable, and begin building our therapeutic relationship. There's no pressure — we go at your pace." },
+  { q: "What can I expect from my first session?", a: "Your first session is a safe space to share what's brought you here. We'll discuss your goals, explore your history at whatever pace feels comfortable, and begin building our therapeutic relationship." },
   { q: "How is EFT different from regular counselling?", a: "EFT (Emotional Freedom Techniques or 'tapping') works directly with the body's energy system alongside the mind. While counselling explores thoughts and feelings through conversation, EFT adds a physical element — tapping on acupressure points — which can accelerate emotional release and shift deeply held patterns more quickly." },
   { q: "How many sessions will I need?", a: "This varies greatly depending on your goals. Some people experience significant shifts in 3–5 sessions; others benefit from longer-term support. We'll discuss this together and review regularly as we progress." },
-  { q: "Are sessions available online?", a: "Yes — all services are available via secure video call, making therapy accessible wherever you are. In-person sessions are also available; please enquire for location details." },
+  { q: "Are sessions available online?", a: "Yes, all services are available via secure video call, making therapy accessible wherever you are." },
   { q: "Is everything I share confidential?", a: "Absolutely. Everything shared is held in strict confidence. The only exceptions are standard legal and ethical obligations (such as risk of serious harm), which I will always explain clearly before we begin." },
-  { q: "What if I'm not sure therapy is right for me?", a: "That's completely okay. I offer a free 20-minute discovery call where you can ask questions, share a little about what you're experiencing, and see if we feel like a good fit. No commitment required." },
+  { q: "What if I am not sure therapy is right for me?", a: "That's completely okay. I offer a free 20-minute discovery call where you can ask questions, share a little about what you're experiencing, and see if we feel like a good fit. No commitment required." },
 ];
 
 function FAQ() {
@@ -1465,8 +1393,8 @@ function Contact() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 36 }}>
               {[
-                { icon: "📧", label: "Email", value: "vrinda@healinghorizon.com" },
-                { icon: "📱", label: "Phone / WhatsApp", value: "+91 00000 00000" },
+                { icon: "📧", label: "Email", value: "healinghorizon09@gmail.com" },
+                { icon: "📱", label: "Phone / WhatsApp", value: "+91 99977 84645" },
                 { icon: "🕐", label: "Response Time", value: "Within 24 hours" },
                 { icon: "🌐", label: "Sessions", value: "Online" },
               ].map((c, i) => (
@@ -1565,8 +1493,7 @@ function Contact() {
                     <option value="">Select a service…</option>
                     <option>Free Discovery Call (20 min)</option>
                     <option>EFT Tapping Session</option>
-                    <option>Counselling & Psychotherapy</option>
-                    <option>Integrative Therapy</option>
+                    <option>Counselling</option>
                     <option>Not sure yet</option>
                   </select>
                 </div>
@@ -1624,7 +1551,7 @@ function Footer() {
             <p style={{ fontFamily: B, fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.8, maxWidth: 300, fontWeight: 300, marginBottom: 20 }}>
               A compassionate space for reflection, growth, and meaningful action toward better mental health.
             </p>
-            <p style={{ fontFamily: B, fontSize: 13, color: SAGE_MD }}>vrinda@healinghorizon.com</p>
+            <p style={{ fontFamily: B, fontSize: 13, color: SAGE_MD }}>healinghorizon09@gmail.com</p>
           </div>
 
           {/* Navigate */}
@@ -1644,7 +1571,7 @@ function Footer() {
           {/* Services */}
           <div>
             <p style={{ fontFamily: B, fontSize: 10, color: "rgba(255,255,255,0.35)", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: 18 }}>Services</p>
-            {["EFT Tapping Sessions", "Counselling & Psychotherapy", "Integrative Therapy", "Free Discovery Call"].map((l, i) => (
+            {["EFT Tapping Sessions", "Counselling", "Free Discovery Call"].map((l, i) => (
               <a key={i} href="#services" style={{
                 display: "block", fontFamily: B, fontSize: 14, fontWeight: 300,
                 color: "rgba(255,255,255,0.6)", marginBottom: 10, transition: "color 0.15s",
