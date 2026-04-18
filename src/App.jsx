@@ -363,7 +363,7 @@ function Navbar() {
           ))}
         </div>
 
-        <a href="#contact" className="btn-primary hide-mobile" style={{ padding: "10px 24px", fontSize: 13 }}>
+        <a href="https://cal.com/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary hide-mobile" style={{ padding: "10px 24px", fontSize: 13 }}>
           Book a Session
         </a>
 
@@ -387,7 +387,7 @@ function Navbar() {
               borderBottom: `1px solid ${BORDER}`, fontFamily: B,
             }}>{l}</a>
           ))}
-          <a href="#contact" className="btn-primary" style={{ marginTop: 20, textAlign: "center", display: "block" }}>
+          <a href="https://cal.com/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ marginTop: 20, textAlign: "center", display: "block" }}>
             Book a Session
           </a>
         </div>
@@ -464,7 +464,7 @@ function Hero() {
           </p>
 
           <div className="fade-up" style={{ display: "flex", gap: 12, flexWrap: "wrap", animationDelay: "0.22s" }}>
-            <a href="#contact" className="btn-primary">Book a Free Consultation</a>
+            <a href="https://cal.com/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary">Book a Free Consultation</a>
             <a href="#about" className="btn-outline">Meet Vrinda</a>
           </div>
 
@@ -711,7 +711,7 @@ function About() {
             <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 36, fontWeight: 300 }}>
               I know what it means to hold things quietly for a long time. And I know what it feels like when you finally don't have to.
             </p>
-            <a href="#contact" className="btn-primary">Work With Me</a>
+            <a href="https://cal.com/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary">Work With Me</a>
           </div>
         </div>
       </div>
@@ -1037,6 +1037,7 @@ function Pricing() {
       prices: { INR: "₹4,000", USD: "₹4,000", GBP: "₹4,000" },
       includes: ["60-minute session", "EFT, CBT or Counselling", "Follow-up resources"],
       cta: "Book a Session",
+      link: "https://cal.com/healing-horizon/discovery-call",
       featured: false,
     },
     {
@@ -1045,6 +1046,7 @@ function Pricing() {
       prices: { INR: "₹18,000", USD: "₹18,000", GBP: "₹18,000" },
       includes: ["5 × 60-minute sessions", "Priority scheduling", "EFT, CBT or Counselling", "Follow-up resources"],
       cta: "Get the Bundle",
+      link: "https://cal.com/healing-horizon/discovery-call",
       featured: true,
       saving: { INR: "Save 10%", USD: "Save 10%", GBP: "Save 10%" },
     },
@@ -1054,6 +1056,7 @@ function Pricing() {
       prices: { INR: "Free", USD: "Free", GBP: "Free" },
       includes: ["20-minute video call", "Q&A with Vrinda", "No commitment required"],
       cta: "Book Free Call",
+      link: "#contact",
       featured: false,
     },
   ];
@@ -1159,7 +1162,7 @@ function Pricing() {
                 ))}
               </div>
 
-              <a href="#contact" style={{
+              <a href={p.link} target={p.link.startsWith("http") ? "_blank" : undefined} rel={p.link.startsWith("http") ? "noopener noreferrer" : undefined} style={{
                 display: "block", textAlign: "center",
                 padding: "13px 24px", borderRadius: 100,
                 fontFamily: B, fontSize: 14, fontWeight: 500, cursor: "pointer",
@@ -1458,7 +1461,7 @@ function Contact() {
                 <input type="hidden" name="form-name" value="contact" />
                 <p style={{ display: "none" }}><input name="bot-field" /></p>
                 <h3 style={{ fontFamily: D, fontSize: 28, fontWeight: 400, color: FOREST, marginBottom: 28, letterSpacing: "-0.3px" }}>
-                  Book a Session
+                  Let's start a conversation
                 </h3>
 
                 <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14, marginBottom: 14 }}>
