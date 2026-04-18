@@ -238,13 +238,13 @@ const GlobalStyle = () => (
       .mobile-grid-1 { grid-template-columns: 1fr !important; }
 
       /* Section padding */
-      .section-pad { padding: 72px 20px !important; }
-      .section-pad-b0 { padding: 72px 20px 0 !important; }
+      .section-pad { padding: 48px 20px !important; }
+      .section-pad-b0 { padding: 48px 20px 0 !important; }
 
       /* Hero */
       .hero-inner {
         grid-template-columns: 1fr !important;
-        padding: 40px 20px 60px !important;
+        padding: 28px 20px 44px !important;
         gap: 0 !important;
       }
 
@@ -261,16 +261,22 @@ const GlobalStyle = () => (
       }
 
       /* Testimonials */
-      .testi-card { padding: 28px 20px 24px !important; }
+      .testi-card { padding: 24px 18px 20px !important; }
 
       /* FAQ */
-      .faq-answer { padding: 0 20px 20px 20px !important; }
+      .faq-answer { padding: 0 20px 16px 20px !important; }
 
       /* Footer */
-      .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .footer-grid { grid-template-columns: 1fr !important; gap: 24px !important; }
 
       /* Contact form */
       .form-row { grid-template-columns: 1fr !important; }
+
+      /* Tighten internal spacing on mobile */
+      .mobile-tight-mb { margin-bottom: 32px !important; }
+      .imagine-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .pricing-grid { gap: 14px !important; }
+      .services-grid { gap: 14px !important; }
     }
 
     /* Accordion */
@@ -363,7 +369,7 @@ function Navbar() {
           ))}
         </div>
 
-        <a href="https://cal.com/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary hide-mobile" style={{ padding: "10px 24px", fontSize: 13 }}>
+        <a href="https://cal.id/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary hide-mobile" style={{ padding: "10px 24px", fontSize: 13 }}>
           Book a Session
         </a>
 
@@ -387,7 +393,7 @@ function Navbar() {
               borderBottom: `1px solid ${BORDER}`, fontFamily: B,
             }}>{l}</a>
           ))}
-          <a href="https://cal.com/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ marginTop: 20, textAlign: "center", display: "block" }}>
+          <a href="https://cal.id/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary" style={{ marginTop: 20, textAlign: "center", display: "block" }}>
             Book a Session
           </a>
         </div>
@@ -464,7 +470,7 @@ function Hero() {
           </p>
 
           <div className="fade-up" style={{ display: "flex", gap: 12, flexWrap: "wrap", animationDelay: "0.22s" }}>
-            <a href="https://cal.com/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary">Book a Free Consultation</a>
+            <a href="https://cal.id/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary">Book a Free Consultation</a>
             <a href="#about" className="btn-outline">Meet Vrinda</a>
           </div>
 
@@ -634,7 +640,7 @@ function About() {
           <div className="reveal-left">
             <div style={{
               background: `linear-gradient(145deg, ${CREAM} 0%, ${CREAM2} 100%)`,
-              borderRadius: 28, padding: "44px 40px 80px",
+              borderRadius: 28, padding: "44px 40px 72px",
               border: `1px solid ${BORDER}`,
               position: "relative", overflow: "visible",
             }}>
@@ -652,24 +658,10 @@ function About() {
                 fontWeight: 300, fontStyle: "italic",
                 color: FOREST, lineHeight: 1.55,
                 borderLeft: `3px solid ${TERRA}`,
-                paddingLeft: 22, marginBottom: 32,
+                paddingLeft: 22, marginBottom: 0,
               }}>
                 The shift I see most often isn't dramatic. It's the session where someone says — 'I actually feel okay today.'
               </blockquote>
-
-              <div style={{ display: "flex", flexDirection: "column", gap: 13 }}>
-                {[
-                  "Empowerment — you lead the way",
-                  "Inclusivity — a space for everyone",
-                  "Mindfulness & present-moment awareness",
-                  "Trauma-informed, non-judgmental care",
-                ].map((text, i) => (
-                  <div key={i} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                    <div style={{ width: 5, height: 5, borderRadius: "50%", background: TERRA, flexShrink: 0 }} />
-                    <span style={{ fontFamily: B, fontSize: 14, color: MUTED }}>{text}</span>
-                  </div>
-                ))}
-              </div>
 
               {/* Credential tag */}
               <div style={{
@@ -711,7 +703,7 @@ function About() {
             <p style={{ fontFamily: B, fontSize: 16, color: MUTED, lineHeight: 1.82, marginBottom: 36, fontWeight: 300 }}>
               I know what it means to hold things quietly for a long time. And I know what it feels like when you finally don't have to.
             </p>
-            <a href="https://cal.com/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary">Work With Me</a>
+            <a href="https://cal.id/healing-horizon/discovery-call" target="_blank" rel="noopener noreferrer" className="btn-primary">Work With Me</a>
           </div>
         </div>
       </div>
@@ -749,7 +741,7 @@ function WhatIsEFT() {
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }} className="mobile-grid-1">
 
           {/* LEFT: Heading + intro */}
-          <div className="reveal-left">
+          <div className="reveal-left imagine-left">
             <span className="section-label">Work With Me</span>
             <div className="rule" />
             <h2 style={{
@@ -847,7 +839,7 @@ function Services() {
           </h2>
         </div>
 
-        <div style={{
+        <div className="services-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
           gap: 20,
@@ -1037,7 +1029,7 @@ function Pricing() {
       prices: { INR: "₹4,000", USD: "₹4,000", GBP: "₹4,000" },
       includes: ["60-minute session", "EFT, CBT or Counselling", "Follow-up resources"],
       cta: "Book a Session",
-      link: "https://cal.com/healing-horizon/discovery-call",
+      link: "https://cal.id/healing-horizon/discovery-call",
       featured: false,
     },
     {
@@ -1046,7 +1038,7 @@ function Pricing() {
       prices: { INR: "₹18,000", USD: "₹18,000", GBP: "₹18,000" },
       includes: ["5 × 60-minute sessions", "Priority scheduling", "EFT, CBT or Counselling", "Follow-up resources"],
       cta: "Get the Bundle",
-      link: "https://cal.com/healing-horizon/discovery-call",
+      link: "https://cal.id/healing-horizon/discovery-call",
       featured: true,
       saving: { INR: "Save 10%", USD: "Save 10%", GBP: "Save 10%" },
     },
@@ -1087,7 +1079,7 @@ function Pricing() {
 
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
+        <div className="pricing-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
           {plans.map((p, i) => (
             <div key={i} className="reveal" style={{
               borderRadius: 24, padding: "36px 32px",
@@ -1128,7 +1120,9 @@ function Pricing() {
                   ) : p.prices[currency]}
                 </span>
                 {p.prices[currency] !== "Free" && (
-                  <span style={{ fontFamily: B, fontSize: 13, color: p.featured ? "rgba(255,255,255,0.5)" : MUTED, marginLeft: 6 }}>/ session</span>
+                  <span style={{ fontFamily: B, fontSize: 13, color: p.featured ? "rgba(255,255,255,0.5)" : MUTED, marginLeft: 6 }}>
+                    {p.featured ? "/ 5 sessions" : "/ session"}
+                  </span>
                 )}
               </div>
 
@@ -1554,7 +1548,38 @@ function Footer() {
             <p style={{ fontFamily: B, fontSize: 14, color: "rgba(255,255,255,0.5)", lineHeight: 1.8, maxWidth: 300, fontWeight: 300, marginBottom: 20 }}>
               A compassionate space for reflection, growth, and meaningful action toward better mental health.
             </p>
-            <p style={{ fontFamily: B, fontSize: 13, color: SAGE_MD }}>healinghorizon09@gmail.com</p>
+            <div style={{ display: "flex", gap: 12, marginTop: 4 }}>
+              <a href="https://www.instagram.com/healing_horizon_?igsh=MWNsbmdzamJyZTA5aA==" target="_blank" rel="noopener noreferrer" style={{
+                display: "flex", alignItems: "center", justifyContent: "center",
+                width: 38, height: 38, borderRadius: 10,
+                background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)",
+                transition: "background 0.2s",
+              }}
+                onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.16)"}
+                onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.08)"}
+              >
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke={SAGE_MD} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill={SAGE_MD} stroke="none"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/vrinda-goel09/" target="_blank" rel="noopener noreferrer" style={{
+                display: "flex", alignItems: "center", justifyContent: "center",
+                width: 38, height: 38, borderRadius: 10,
+                background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.12)",
+                transition: "background 0.2s",
+              }}
+                onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.16)"}
+                onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.08)"}
+              >
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke={SAGE_MD} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Navigate */}
