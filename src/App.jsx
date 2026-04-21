@@ -919,19 +919,19 @@ function Services() {
 const TESTIMONIALS = [
   {
     text: "Working with Vrinda has been truly transformative. After just a few EFT sessions, I noticed a significant shift in how I was handling my anxiety. She creates such a safe, warm space — I never felt judged, only supported.",
-    name: "Priya S.",
+    name: "P.S.",
     role: "Anxiety & Stress",
     initials: "PS",
   },
   {
     text: "I came to Vrinda feeling completely stuck after a painful breakup. Through our counselling sessions, I not only healed but rediscovered who I am. Her approach is gentle yet incredibly effective.",
-    name: "Arjun M.",
+    name: "A.M.",
     role: "Relationship Healing",
     initials: "AM",
   },
   {
     text: "The integrative approach — combining EFT with talk therapy — was exactly what I needed. I finally feel free from the weight I'd been carrying for years. Vrinda is an exceptional therapist.",
-    name: "Rhea K.",
+    name: "R.K.",
     role: "Trauma Recovery",
     initials: "RK",
   },
