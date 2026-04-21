@@ -1,9 +1,5 @@
 import { useState, useRef, useEffect } from "react";
 
-const VALID_USERS = [
-  { email: "demo@fyscaltech.com", password: "FyscalGTM2026", name: "Demo User", role: "Marketing Lead" },
-  { email: "admin@fyscaltech.com", password: "Admin@123", name: "Admin", role: "Administrator" },
-];
 
 const COLLATERAL_TYPES = [
   { id: "product-launch", label: "Product launch" },
@@ -172,13 +168,19 @@ function LoginScreen({ onLogin }) {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const F = "'Urbanist','Inter',system-ui,sans-serif";
-  const submit = () => {
+  const submit = async () => {
     setError(""); setLoading(true);
-    setTimeout(() => {
-      const user = VALID_USERS.find(u => u.email === email.trim().toLowerCase() && u.password === password);
-      if (user) { onLogin(user); } else { setError("Invalid email or password."); }
-      setLoading(false);
-    }, 700);
+    try {
+      const res = await fetch("/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim().toLowerCase(), password }),
+      });
+      const data = await res.json();
+      if (!res.ok) { setError(data.error || "Invalid email or password."); }
+      else { onLogin(data); }
+    } catch { setError("Connection error. Please try again."); }
+    setLoading(false);
   };
   return (
     <div style={{ width: "100%", minHeight: "100vh", background: "#030192", display: "flex", alignItems: "center", justifyContent: "center", padding: "2rem", fontFamily: F }}>
@@ -221,7 +223,9 @@ function LoginScreen({ onLogin }) {
 
 // ─── Main App ──────────────────────────────────────────────────────────────────
 export default function GTMStudio() {
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(() => {
+    try { return JSON.parse(localStorage.getItem("gtm_session")); } catch { return null; }
+  });
   const [view, setView] = useState("dashboard");
   const [collateralType, setCollateralType] = useState("product-launch");
   const [formData, setFormData] = useState({});
@@ -241,7 +245,10 @@ export default function GTMStudio() {
   const fileInputRef = useRef(null);
   const F = "'Urbanist','Inter',system-ui,sans-serif";
 
-  if (!currentUser) return <LoginScreen onLogin={setCurrentUser} />;
+  const handleLogin = (user) => { localStorage.setItem("gtm_session", JSON.stringify(user)); setCurrentUser(user); };
+  const handleSignOut = () => { localStorage.removeItem("gtm_session"); setCurrentUser(null); };
+
+  if (!currentUser) return <LoginScreen onLogin={handleLogin} />;
 
   const hf = (id, v) => setFormData(p => ({ ...p, [id]: v }));
   const hi = (id, v) => setIntakeData(p => ({ ...p, [id]: v }));
@@ -314,9 +321,10 @@ export default function GTMStudio() {
       }
       const res = await fetch("/api/claude", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "Authorization": `Bearer ${currentUser.token}` },
         body: JSON.stringify(body),
       });
+      if (res.status === 401) { handleSignOut(); return; }
       const d = await res.json();
       setSearchStatus("");
       if (d.content && d.content.length > 0) {
@@ -407,7 +415,7 @@ export default function GTMStudio() {
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
           <button onClick={() => { setView("create"); setViewingAsset(null); reset(); }} style={{ background: "#352EFF", border: "none", borderRadius: "8px", padding: "7px 16px", fontSize: "12px", fontWeight: 700, cursor: "pointer", color: "#fff" }}>+ New asset</button>
-          <ProfileMenu user={currentUser} onSignOut={() => setCurrentUser(null)} />
+          <ProfileMenu user={currentUser} onSignOut={handleSignOut} />
         </div>
       </div>
 
