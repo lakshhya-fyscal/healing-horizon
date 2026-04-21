@@ -7,6 +7,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
+        main: resolve(__dirname, 'index.html'),
         fyscal: resolve(__dirname, 'fyscal.html'),
         gtm: resolve(__dirname, 'gtm-studio.html'),
       },
