@@ -1026,21 +1026,11 @@ function Pricing() {
     {
       name: "Individual Session",
       desc: "Perfect for getting started or continuing at your own pace.",
-      prices: { INR: "₹4,000", USD: "₹4,000", GBP: "₹4,000" },
+      prices: { INR: "₹3,500", USD: "₹3,500", GBP: "₹3,500" },
       includes: ["60-minute session", "EFT, CBT or Counselling", "Follow-up resources"],
       cta: "Book a Session",
       link: "https://cal.id/healing-horizon/discovery-call",
       featured: false,
-    },
-    {
-      name: "Bundle of 5",
-      desc: "Most clients see meaningful progress within 4–6 sessions.",
-      prices: { INR: "₹18,000", USD: "₹18,000", GBP: "₹18,000" },
-      includes: ["5 × 60-minute sessions", "Priority scheduling", "EFT, CBT or Counselling", "Follow-up resources"],
-      cta: "Get the Bundle",
-      link: "https://cal.id/healing-horizon/discovery-call",
-      featured: true,
-      saving: { INR: "Save 10%", USD: "Save 10%", GBP: "Save 10%" },
     },
     {
       name: "Free Discovery Call",
@@ -1177,10 +1167,6 @@ function Pricing() {
             </div>
           ))}
         </div>
-
-        <p className="reveal" style={{ fontFamily: B, fontSize: 13, color: MUTED, textAlign: "center", marginTop: 28, fontWeight: 300 }}>
-          Bundle sessions are valid for 2 months from purchase.
-        </p>
       </div>
     </section>
   );
