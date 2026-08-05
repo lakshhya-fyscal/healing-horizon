@@ -358,16 +358,6 @@ function PastWorkshops() {
           </h3>
           <div className="hscroll workshop-row" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 20 }}>
             {UK_WORKSHOPS.map((w, i) => <WorkshopCard key={i} w={w} />)}
-            <div className="reveal" style={{
-              borderRadius: 20, border: `1.5px dashed ${SAGE_MD}`,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              minWidth: 260, minHeight: 220, background: "rgba(79,115,88,0.03)",
-            }}>
-              <div style={{ textAlign: "center", padding: "24px" }}>
-                <div style={{ fontFamily: D, fontSize: 28, color: SAGE, fontWeight: 500, marginBottom: 6 }}>+ more</div>
-                <div style={{ fontFamily: B, fontSize: 13, color: MUTED }}>More UK workshops coming soon</div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
