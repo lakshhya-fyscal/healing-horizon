@@ -12,5 +12,37 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Hidden static forms so Netlify's build-time bot can detect and
+         register these forms — the real forms are rendered by React and
+         are invisible to Netlify's static-HTML scan. Keep field names in
+         sync with src/App.jsx (Contact) and src/Workshops.jsx (WorkshopContact). -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="tel" name="phone" />
+      <select name="service">
+        <option>Free Discovery Call (20 min)</option>
+        <option>EFT Tapping Session</option>
+        <option>Counselling</option>
+        <option>Not sure yet</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
+
+    <form name="workshops-contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="org" />
+      <input type="text" name="location" />
+      <select name="interest">
+        <option>Attending a future workshop</option>
+        <option>Hosting a workshop for my organisation</option>
+        <option>Just curious — tell me more</option>
+      </select>
+      <textarea name="message"></textarea>
+      <input name="bot-field" />
+    </form>
   </body>
 </html>
