@@ -28,27 +28,14 @@ function PhotoPlaceholder({ label, height = 220, radius = 18 }) {
 /* ─────────────────────────────────────────────────────────────────────────────
    WORKSHOP BANNER — illustrated cover used on workshop cards instead of photos
 ───────────────────────────────────────────────────────────────────────────── */
-function WorkshopBanner({ icon, accent, tint, height = 170 }) {
+function WorkshopIcon({ icon, accent, tint }) {
   return (
     <div style={{
-      height, position: "relative", overflow: "hidden",
-      background: `linear-gradient(135deg, ${tint} 0%, ${WHITE} 130%)`,
+      width: 38, height: 38, borderRadius: "50%", flexShrink: 0,
+      background: tint, border: `1.5px solid ${accent}`,
       display: "flex", alignItems: "center", justifyContent: "center",
-    }}>
-      <div style={{ position: "absolute", top: -20, right: -20, opacity: 0.3, pointerEvents: "none" }}>
-        <BotanicalRight />
-      </div>
-      <div style={{ position: "absolute", bottom: -30, left: -20, opacity: 0.18, pointerEvents: "none" }}>
-        <BotanicalLeft />
-      </div>
-      <div style={{
-        width: 60, height: 60, borderRadius: "50%",
-        background: WHITE, border: `1.5px solid ${accent}`,
-        display: "flex", alignItems: "center", justifyContent: "center",
-        fontSize: 28, position: "relative", zIndex: 1,
-        boxShadow: "0 8px 24px rgba(24,38,28,0.08)",
-      }}>{icon}</div>
-    </div>
+      fontSize: 17,
+    }}>{icon}</div>
   );
 }
 
@@ -298,14 +285,16 @@ function WorkshopCard({ w }) {
       background: WHITE, borderRadius: 20, border: `1px solid ${BORDER}`,
       overflow: "hidden", flex: "1 1 0", minWidth: 260,
     }}>
-      <WorkshopBanner icon={w.icon} accent={w.accent} tint={w.tint} />
       <div style={{ padding: "22px 24px 26px" }}>
         <div style={{ fontFamily: B, fontSize: 12, color: MUTED, marginBottom: 10 }}>
           📍 {w.city} · {w.date}
         </div>
-        <h3 style={{ fontFamily: D, fontSize: 21, fontWeight: 500, color: FOREST, marginBottom: 10, letterSpacing: "-0.2px" }}>
-          "{w.title}"
-        </h3>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 10 }}>
+          <WorkshopIcon icon={w.icon} accent={w.accent} tint={w.tint} />
+          <h3 style={{ fontFamily: D, fontSize: 21, fontWeight: 500, color: FOREST, letterSpacing: "-0.2px" }}>
+            "{w.title}"
+          </h3>
+        </div>
         <p style={{ fontFamily: B, fontSize: 13.5, color: MUTED, lineHeight: 1.7, marginBottom: 16, fontWeight: 300 }}>
           {w.desc}
         </p>
